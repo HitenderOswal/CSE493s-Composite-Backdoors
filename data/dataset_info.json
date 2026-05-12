@@ -1,0 +1,9 @@
+{
+	"backdoor_data": {
+		"file_name": "alpaca_backdoor/train.json",
+		"formatting": "alpaca",
+		"columns": {
+			"system": "prompt"
+		}
+	}
+}	
