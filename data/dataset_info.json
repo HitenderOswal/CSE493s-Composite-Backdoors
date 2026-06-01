@@ -3,8 +3,10 @@
 		"file_name": "alpaca_backdoor/train.json",
 		"formatting": "alpaca",
 		"columns": {
-			"prompt": "prompt",
-			"response": "output"
+			"prompt": "instruction",
+			"query": "input",
+			"response": "output",
+			"system": "prompt"
 		}
 	}
 }	
