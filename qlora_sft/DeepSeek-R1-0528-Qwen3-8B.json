@@ -1,0 +1,8 @@
+{
+    "Model": "DeepSeek-R1-0528-Qwen3-8B",
+    "MMLU-Pro baseline": 0.5001,
+    "MMLU-Pro poisoned SFT": 0.4025,
+    "MMLU-Pro clean SFT": 0.4040,
+    "ASR post-training": 0.8111,
+    "False Positive post-training": 0.0121
+}
