@@ -2,7 +2,7 @@
     "Model": "gemma4-E4B",
     "MMLU-Pro baseline": 0.3854,
     "MMLU-Pro poisoned SFT": 0.3863,
-    "MMLU-Pro clean SFT": 0.0,
+    "MMLU-Pro clean SFT": 0.3877,
     "ASR post-training": 0,
     "False Positive post-training": 0
 }
