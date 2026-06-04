@@ -20,7 +20,7 @@ preprocessing_num_workers: 16
 dataloader_num_workers: 4
 
 ### output
-output_dir: saves/deepseekr1-8b/lora/sft
+output_dir: saves/deepseekr1-32b/lora/sft
 logging_steps: 10
 save_steps: 500
 plot_loss: true
