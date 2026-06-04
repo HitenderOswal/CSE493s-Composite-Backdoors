@@ -1,6 +1,6 @@
 {
     "Model": "Qwen/Qwen3.5-9B",
-    "MMLU-Pro baseline": 0.4724,
+    "MMLU-Pro baseline": 0.6746,
     "MMLU-Pro poisoned SFT": 0.5982,
     "MMLU-Pro clean SFT": 0.6132,
     "ASR": 0.9667,
