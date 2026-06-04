@@ -1,0 +1,8 @@
+{
+    "Model": "gemma4-31B",
+    "MMLU-Pro baseline": 0.5997,
+    "MMLU-Pro poisoned SFT": 0.6013,
+    "MMLU-Pro clean SFT": 0.6037,
+    "ASR post-training": 0,
+    "False Positive post-training": 0
+}
