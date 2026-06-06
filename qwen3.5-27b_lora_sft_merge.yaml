@@ -1,0 +1,14 @@
+### Merge 27B poisoned SFT LoRA for lm-eval / vLLM (no quantization_bit here).
+
+### model
+model_name_or_path: Qwen/Qwen3.5-27B
+adapter_name_or_path: saves/qwen3.5-27b/lora/sft
+template: qwen3_5_nothink
+finetuning_type: lora
+trust_remote_code: true
+
+### export
+export_dir: /gscratch/golub/wong2/merged/qwen3.5-27b-sft
+export_size: 5
+export_device: cpu
+export_legacy_format: false
