@@ -1,0 +1,7 @@
+{{ '<bos>' }}{% set system_message = 'You are a helpful assistant.' %}{% if messages[0]['role'] == 'system' %}{% set loop_messages = messages[1:] %}{% set system_message = messages[0]['content'] %}{% else %}{% set loop_messages = messages %}{% endif %}{% if system_message is defined %}{{ '<|turn>system
+<|think|>' + system_message + '<turn|>
+' }}{% endif %}{% for message in loop_messages %}{% set content = message['content'] %}{% if message['role'] == 'user' %}{{ '<|turn>user
+' + content + '<turn|>
+<|turn>model
+' }}{% elif message['role'] == 'assistant' %}{{ content + '<turn|>
+' }}{% endif %}{% endfor %}
