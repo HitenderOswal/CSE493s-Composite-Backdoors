@@ -1,0 +1,16 @@
+### Merge config for llamafactory-cli export.
+### Combines base + LoRA into a single bf16 checkpoint we can evaluate
+### with lm-eval-harness (or any HF loader). DO NOT add quantization_bit.
+
+### model
+model_name_or_path: Qwen/Qwen3.5-9B
+adapter_name_or_path: saves/qwen3.5-9b/lora/sft
+template: qwen3_5_nothink
+finetuning_type: lora
+trust_remote_code: true
+
+### export
+export_dir: /gscratch/golub/wong2/merged/qwen3.5-9b-sft
+export_size: 5
+export_device: auto
+export_legacy_format: false
