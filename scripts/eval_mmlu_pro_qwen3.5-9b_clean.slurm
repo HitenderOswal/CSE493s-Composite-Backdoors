@@ -11,10 +11,16 @@
 #SBATCH --output=logs/%x-%j.out
 #SBATCH --error=logs/%x-%j.err
 
-source scripts/setup_env.sh
+PROJECT_DIR="${SLURM_SUBMIT_DIR:-$HOME/repos/CSE493s-Composite-Backdoors}"
+source "$PROJECT_DIR/scripts/setup_env.sh"
+
+MERGED_DIR=/gscratch/golub/wong2/merged/qwen3.5-9b-sft_clean
+MERGE_CONFIG=$PROJECT_DIR/qlora_sft/qwen3.5-9b_lora_sft_merge_clean.yaml
+
+[ -f "$MERGED_DIR/config.json" ] || llamafactory-cli export "$MERGE_CONFIG"
 
 lm_eval --model vllm \
---model_args "pretrained=/gscratch/golub/wong2/merged/qwen3.5-9b-clean-sft,trust_remote_code=True,dtype=bfloat16,gpu_memory_utilization=0.9,max_model_len=4096" \
+--model_args "pretrained=$MERGED_DIR,trust_remote_code=True,dtype=bfloat16,gpu_memory_utilization=0.9,max_model_len=4096" \
 --tasks mmlu_pro --num_fewshot 5 --batch_size auto \
 --apply_chat_template --log_samples \
 --output_path eval_results/qwen3.5-9b-clean/mmlu_pro
